@@ -51,7 +51,7 @@ server.post("/providers", async (req, res, next) => {
     }
     const newProvider = await Provider.create(req.body);
     // const newProvider = new Provider(req.body);
-    await newProvider.save();
+    // await newProvider.save();
     res
       .status(201)
       .json({ message: "successfully added", provider: newProvider });
