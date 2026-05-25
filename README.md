@@ -1,28 +1,49 @@
+# Node.js Backend Development <!--Portfolio-->
+
+This repository showcases a collection of backend development projects built primarily with Node.js, Express.js, and MongoDB. Each project demonstrates various aspects of API design, database management, authentication, authorization, and other backend functionalities.
+
+## Technology Stack
+
+* **Programming Language:** JavaScript
+* **Runtime Environment:** Node.js
+* **Web Framework:** Express.js
+* **Database:** MongoDB
+* **Object Data Modeling (ODM):** Mongoose
+
 ## Projects
 
-- [Project 01](./project_01) -
-[Live Demo:]()
+* ### [Project 01](./project_01) - (Description coming soon)
 
-- [Project 02](./project_02) -
-[Live Demo:]()
+<!-- [Live Demo:]() -->
 
-- [Project 03](./project_03) -
-[Live Demo:]()
+* ### [Project 02](./project_02) - Basic Array Manipulation Exercises
 
-- [Project 04](./project_04) -
-[Live Demo:]()
+    This project contains simple JavaScript exercises focusing on array operations like adding, removing, and reordering elements.
+<!-- [Live Demo:]() -->
 
-- [Project 05](./project_05) -
-[Live Demo:]()
+* ### [Project 03](./project_03) - GigFlow Pro Onboarding API
 
-- [Project 06](./project_06) -
-[Live Demo:]()
+    A robust Service Provider Management System for the "GigFlow" platform. This API handles professional profiles, skill categorization, and a verification workflow, featuring CRUD operations, custom verification routes, skill-based search, duplicate prevention, and global error handling.
+<!-- [Live Demo:]() -->
 
-- [Project 07](./project_07) -
-[Live Demo:]()
+* ### [Project 04](./project_04) - VaultPass: Secure Authentication & Authorization API
 
-- [Project 08](./project_08) -
-[Live Demo:]()
+    This project redesigns the backend for "VaultPass," a platform for secure private notes and team access. It implements a comprehensive authentication and authorization system with role-based access control (RBAC), account locking for failed login attempts, JWT token security, and a suspicious activity logger.
+<!-- [Live Demo:]() -->
 
-- [Project 09](./project_09) -
-[Live Demo:]()
+* ### [Project 05](./project_05) - (Description coming soon)
+
+<!-- [Live Demo:]() -->
+
+* ### [Project 06](./project_06) - (Description coming soon)
+
+<!-- [Live Demo:]() -->
+
+* ### [Project 07](./project_07) - (Description coming soon)
+<!-- [Live Demo:]() -->
+
+* ### [Project 08](./project_08) - (Description coming soon)
+<!-- [Live Demo:]() -->
+
+* ### [Project 09](./project_09) - (Description coming soon)
+<!-- [Live Demo:]() -->
