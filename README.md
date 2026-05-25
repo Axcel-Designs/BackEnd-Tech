@@ -26,7 +26,7 @@ This repository showcases a collection of backend development projects built pri
     A robust Service Provider Management System for the "GigFlow" platform. This API handles professional profiles, skill categorization, and a verification workflow, featuring CRUD operations, custom verification routes, skill-based search, duplicate prevention, and global error handling.
 <!-- [Live Demo:]() -->
 
-* ### [Project 04](./project_04) - VaultPass: Secure Authentication & Authorization API
+* ### [Project 04 Capstone](./project_04_capstone_assessment) - VaultPass: Secure Authentication & Authorization API
 
     This project redesigns the backend for "VaultPass," a platform for secure private notes and team access. It implements a comprehensive authentication and authorization system with role-based access control (RBAC), account locking for failed login attempts, JWT token security, and a suspicious activity logger.
 <!-- [Live Demo:]() -->
