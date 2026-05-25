@@ -12,7 +12,7 @@ This repository showcases a collection of backend development projects built pri
 
 ## Projects
 
-* ### [Project 01](./project_01) - (Description coming soon)
+* ### [Project 01](./project_01) - (Object)
 
 <!-- [Live Demo:]() -->
 
