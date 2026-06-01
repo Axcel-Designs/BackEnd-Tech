@@ -19,5 +19,5 @@ const auditLogSchema = new mongoose.Schema(
   { versionKey: false },
 );
 
-module.exports =
-  mongoose.materialized || mongoose.model("AuditLog", auditLogSchema);
+const AuditLog = mongoose.model("AuditLog", auditLogSchema);
+module.exports = mongoose.materialized || AuditLog;

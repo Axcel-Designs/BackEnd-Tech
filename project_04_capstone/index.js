@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
-// const mongoose = require("mongoose");
 const connectDB = require("./src/config/db");
 const userRouter = require("./src/routes/userRoute");
 const modRouter = require("./src/routes/modRoute");
@@ -29,7 +28,7 @@ app.use((error, req, res, next) => {
   res.status(500).json({ message: "internal server error" });
 });
 
+await connectDB();
 app.listen(port, () => {
-  connectDB();
   console.log(`App listening on port ${port}`);
 });

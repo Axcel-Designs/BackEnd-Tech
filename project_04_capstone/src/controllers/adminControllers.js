@@ -1,4 +1,5 @@
 const Account = require("../model/schema");
+const AuditLog = require("../model/AuditLog");
 
 // setAdmin
 async function setAdmin(req, res, next) {

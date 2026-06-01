@@ -3,7 +3,6 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 require("dotenv").config();
 const mongoose = require("mongoose");
-const { MongoClient } = require("mongodb");
 
 const MONGODB_URI = process.env.MONGODB_URI;
 

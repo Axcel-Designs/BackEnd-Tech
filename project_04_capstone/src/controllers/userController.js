@@ -19,6 +19,7 @@ async function signUp(req, res, next) {
     res
       .status(201)
       .json({ account: newAcount, message: "Account created successfully" });
+      
   } catch (error) {
     console.error(`Error Message: `, error.message);
     next(error);

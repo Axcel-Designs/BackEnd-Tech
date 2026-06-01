@@ -222,3 +222,39 @@ Students must answer these theoretically:
 
 5. Question 5
     Why should logging systems be treated as sensitive infrastructure?
+
+vaultpass-backend/
+├── src/
+│   ├── config/
+│   │   └── db.js                 # MongoDB connection logic (with public DNS resolution)
+│   │
+│   ├── controllers/
+│   │   ├── adminController.js    # Handles user deletion, promotion, etc.
+│   │   ├── authController.js     # Handles signUp and signIn (with login lock logic)
+│   │   ├── modController.js      # Handles moderator specific logic (reports)
+│   │   └── userController.js     # Handles regular user routes (profile lookup)
+│   │
+│   ├── middleware/
+│   │   ├── authMiddleware.js     # JWT token verification ('protect' function)
+│   │   ├── errorMiddleware.js    # Global 500 error & 404 catch-all handlers
+│   │   ├── logMiddleware.js      # Suspicious Activity Logger (failed logins, forbidden access)
+│   │   └── roleMiddleware.js     # Role verification ('restrictTo' guard)
+│   │
+│   ├── models/
+│   │   ├── Account.js            # User Schema (with bcrypt hook, login attempts, & lock tracking fields)
+│   │   └── AuditLog.js           # Schema for logging failed logins, forbidden access, & deletions
+│   │
+│   ├── routes/
+│   │   ├── adminRoute.js         # Protected admin endpoints
+│   │   ├── modRoute.js           # Protected moderator endpoints
+│   │   ├── publicRoute.js        # Unprotected endpoints (/api/public)
+│   │   └── userRoute.js          # Protected user endpoints
+│   │
+│   └── app.js                    # Express application configuration & routing pipeline
+│
+├── .env                          # Local secret environment variables (PORT, MONGO_URI, JWT_SECRET)
+├── .env.example                  # Template env file for GitHub (no real secrets included)
+├── .gitignore                    # Tells Git to ignore node_modules and your active .env file
+├── package.json                  # App dependencies (express, mongoose, bcrypt, jsonwebtoken, morgan, dotenv)
+├── server.js                     # Root entry point that boots up DB first, then listens on the Port
+└── README.md                     # Documentation detailing database choices & theory question answers
