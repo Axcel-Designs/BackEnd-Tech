@@ -223,6 +223,8 @@ Students must answer these theoretically:
 5. Question 5
     Why should logging systems be treated as sensitive infrastructure?
 
+    
+<!-- 
 vaultpass-backend/
 ├── src/
 │   ├── config/
@@ -257,4 +259,4 @@ vaultpass-backend/
 ├── .gitignore                    # Tells Git to ignore node_modules and your active .env file
 ├── package.json                  # App dependencies (express, mongoose, bcrypt, jsonwebtoken, morgan, dotenv)
 ├── server.js                     # Root entry point that boots up DB first, then listens on the Port
-└── README.md                     # Documentation detailing database choices & theory question answers
+└── README.md                     # Documentation detailing database choices & theory question answers -->
