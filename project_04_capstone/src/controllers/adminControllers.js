@@ -34,14 +34,29 @@ async function setAdmin(req, res, next) {
 async function delUser(req, res, next) {
   const ipAddress = req.ip || req.socket.remoteAddress;
   try {
-    if (req.Account.role !== "admin") {
-      return res.status(400).json({ message: "forbidden" });
+    // if (req.Account.role !== "admin") {
+    //   return res.status(400).json({ message: "forbidden" });
+    // }
+
+    if (req.user._id.toString() === req.params.id) {
+      return res.status(400).json({
+        message:
+          "Operation forbidden: Administrative profiles cannot execute self deletion paths.",
+      });
+    }
+    const targetAccount = await Account.findById(req.params.id);
+
+    if (!targetAccount) {
+      return res.status(404).json({ message: "Account not found" });
     }
 
     await Account.findByIdAndDelete(req.params.id);
-    if (!(await Account.findByIdAndDelete(req.params.id))) {
-      return res.status(404).json({ message: "Account not found" });
-    }
+
+    await AuditLog.create({
+      action: "ACCOUNT_DELETED",
+      user: targetAccount.email,
+      ipAddress,
+    });
 
     return res.status(200).json({ message: "Account Deleted Sucessfully" });
   } catch (error) {
