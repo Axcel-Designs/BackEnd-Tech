@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const Account = require("../model/schema");
+const AuditLog = require("../model/AuditLog");
 
 // sign Up
 async function signUp(req, res, next) {
@@ -31,9 +32,14 @@ async function signIn(req, res, next) {
       return res.status(400).json({ message: "All fields required" });
     }
 
-    const account = await Account.findOne({ email });
+    const account = await Account.findOne({ email: email.toLowerCase() });
 
     if (!account) {
+       await AuditLog.create({
+         action: "FAILED_LOGIN",
+         user: email,
+         ipAddress,
+       });
       return res.status(400).json({ message: "Invalid email or password" });
     }
 

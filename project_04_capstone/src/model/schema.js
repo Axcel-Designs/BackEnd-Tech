@@ -12,9 +12,16 @@ const accountSchema = new mongoose.Schema(
       default: "user",
       required: true,
     },
+    loginAttempts: { type: Number, required: true, default: 0 },
+    lockUntil: { type: Date },
   },
   { timestamps: true, versionKey: false },
 );
+
+// Compiles a virtual flag to inspect if the lock period is still active
+accountSchema.virtual("isLocked").get(function () {
+  return !!(this.lockUntil && this.lockUntil > Date.now());
+});
 
 accountSchema.pre("save", async function () {
   // Only hash the password if it's new or being updated
@@ -31,6 +38,9 @@ accountSchema.pre("save", async function () {
 accountSchema.set("toJSON", {
   transform: (doc, ret) => {
     delete ret.password; // Prevents leaking the hashed password over the network
+    delete ret.loginAttempts; 
+    delete ret.lockUntil; 
+    
     return ret;
   },
 });
