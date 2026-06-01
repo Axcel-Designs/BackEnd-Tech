@@ -15,6 +15,14 @@ async function setAdmin(req, res, next) {
     if (!account) {
       return res.status(404).json({ message: "Account not found" });
     }
+
+  if (account.role === "admin") {
+    return res.status(400).json({
+      message:
+        "Action barred: account configuration already maps to terminal administrative parameters.",
+    });
+  }
+
     account.role = "admin";
     await account.save();
 
