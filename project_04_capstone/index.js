@@ -23,13 +23,16 @@ app.use("/api/public", publicRoute);
 app.use(notFound);
 app.use(errorHandler);
 
-connectDB()
-  .then(() => {
+async function startServer() {
+  try {
+    await connectDB();
     app.listen(port, () => {
       console.log(`App listening on port ${port}`);
     });
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error("Failed to start server:", error);
     process.exit(1);
-  });
+  }
+}
+
+startServer();
