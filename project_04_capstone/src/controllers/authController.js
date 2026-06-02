@@ -9,7 +9,7 @@ async function signUp(req, res, next) {
     if (!req.body || Object.keys(req.body).length === 0) {
       return res.status(400).json({ message: "All fields required" });
     }
-    if (await Account.findOne({ email: req.body.email })) {
+    if (await Account.findOne({ email: req.body.email.toLowerCase() })) {
       return res.status(400).json({ message: "Email already in use" });
     }
     const newAccount = await Account.create(req.body);
@@ -80,7 +80,7 @@ async function signIn(req, res, next) {
 
     // Flush security attempt limits upon healthy baseline entry
     account.loginAttempts = 0;
-    account.lockUntil = undefined;
+    account.lockUntil = null;
     await account.save();
 
     const token = jwt.sign(

@@ -54,10 +54,14 @@ async function delUser(req, res, next) {
     if (!targetAccount) {
       return res.status(404).json({ message: "Account not found" });
     }
-    if (targetAccount.role !== "admin") {
-      return res.status(400).json({ message: "forbidden" });
+
+    if (targetAccount.role === "admin") {
+      return res.status(403).json({
+        message:
+          "Operation forbidden: Terminal administrative profiles cannot be removed via this path.",
+      });
     }
-    
+
     await Account.findByIdAndDelete(req.params.id);
 
     await AuditLog.create({

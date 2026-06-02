@@ -45,4 +45,4 @@ accountSchema.set("toJSON", {
 });
 
 const Account = mongoose.model("Account", accountSchema);
-module.exports = Account;
+module.exports = mongoose.models.Account || Account;

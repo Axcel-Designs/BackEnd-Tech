@@ -20,4 +20,4 @@ const auditLogSchema = new mongoose.Schema(
 );
 
 const AuditLog = mongoose.model("AuditLog", auditLogSchema);
-module.exports = mongoose.materialized || AuditLog;
+module.exports = mongoose.models.AuditLog || AuditLog;
