@@ -28,7 +28,7 @@ app.use((error, req, res, next) => {
   res.status(500).json({ message: "internal server error" });
 });
 
-await connectDB();
+connectDB();
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
