@@ -50,6 +50,12 @@ async function signIn(req, res, next) {
     const isMatched = await bcrypt.compare(password, account.password);
 
     if (!isMatched) {
+      // Check if last attempt was more than 10 minutes ago; if so, reset counter
+      const tenMinutesAgo = new Date(Date.now() - 10 * 60 * 1000);
+      if (account.updatedAt < tenMinutesAgo) {
+        account.loginAttempts = 0; // Reset if no attempts in last 10 minutes
+      }
+
       account.loginAttempts += 1;
 
       // Lock processing condition block

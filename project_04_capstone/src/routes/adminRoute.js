@@ -9,9 +9,9 @@ const protect = require("../middleware/authMiddleware");
 const { restrictTo } = require("../middleware/roleMiddleware");
 const adminRouter = express.Router();
 
-adminRouter.get("/users", protect, getAllUsers);
-adminRouter.get("/user/:id", protect,  getUser);
-adminRouter.delete("/user/:id", protect, restrictTo("admin"), delUser);
-adminRouter.patch("/setAdmin/:id",protect, restrictTo("admin"), setAdmin);
+adminRouter.get("/", protect, getAllUsers);
+adminRouter.get("/:id", protect,  getUser);
+adminRouter.delete("/:id", protect, restrictTo("admin"), delUser);
+adminRouter.post("/promote/:id",protect, restrictTo("admin"), setAdmin);
 
 module.exports = adminRouter;

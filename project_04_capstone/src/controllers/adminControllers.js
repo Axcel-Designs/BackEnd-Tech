@@ -5,7 +5,6 @@ const AuditLog = require("../model/AuditLog");
 async function setAdmin(req, res, next) {
   const ipAddress = req.ip || req.socket.remoteAddress;
   try {
-
     // if (!req.body.role || !["moderator", "admin"].includes(role)) {
     //   return res
     //     .status(400)
@@ -44,10 +43,6 @@ async function setAdmin(req, res, next) {
 async function delUser(req, res, next) {
   const ipAddress = req.ip || req.socket.remoteAddress;
   try {
-    // if (req.Account.role !== "admin") {
-    //   return res.status(400).json({ message: "forbidden" });
-    // }
-
     if (req.user._id.toString() === req.params.id) {
       return res.status(400).json({
         message:
@@ -59,7 +54,10 @@ async function delUser(req, res, next) {
     if (!targetAccount) {
       return res.status(404).json({ message: "Account not found" });
     }
-
+    if (targetAccount.role !== "admin") {
+      return res.status(400).json({ message: "forbidden" });
+    }
+    
     await Account.findByIdAndDelete(req.params.id);
 
     await AuditLog.create({
