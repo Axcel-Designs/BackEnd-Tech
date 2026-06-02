@@ -1,8 +1,3 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const Account = require("../model/Account");
-const AuditLog = require("../model/AuditLog");
-
 async function profile(req, res, next) {
   try {
     return res

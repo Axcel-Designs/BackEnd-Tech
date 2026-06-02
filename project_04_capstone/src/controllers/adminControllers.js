@@ -5,11 +5,12 @@ const AuditLog = require("../model/AuditLog");
 async function setAdmin(req, res, next) {
   const ipAddress = req.ip || req.socket.remoteAddress;
   try {
-    if (!req.body.role || !["moderator", "admin"].includes(role)) {
-      return res
-        .status(400)
-        .json({ message: "Invalid designation update mapping parameter" });
-    }
+
+    // if (!req.body.role || !["moderator", "admin"].includes(role)) {
+    //   return res
+    //     .status(400)
+    //     .json({ message: "Invalid designation update mapping parameter" });
+    // }
 
     const account = await Account.findById(req.params.id);
 
