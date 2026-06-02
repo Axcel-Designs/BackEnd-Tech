@@ -1,4 +1,4 @@
-const Account = require("../model/schema");
+const Account = require("../model/Account");
 const AuditLog = require("../model/AuditLog");
 
 // setAdmin
@@ -17,12 +17,12 @@ async function setAdmin(req, res, next) {
       return res.status(404).json({ message: "Account not found" });
     }
 
-  if (account.role === "admin") {
-    return res.status(400).json({
-      message:
-        "Action barred: account configuration already maps to terminal administrative parameters.",
-    });
-  }
+    if (account.role === "admin") {
+      return res.status(400).json({
+        message:
+          "Action barred: account configuration already maps to terminal administrative parameters.",
+      });
+    }
 
     account.role = "admin";
     await account.save();

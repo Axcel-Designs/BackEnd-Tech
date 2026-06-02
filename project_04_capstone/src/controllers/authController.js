@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const Account = require("../model/schema");
+const Account = require("../model/Account");
 const AuditLog = require("../model/AuditLog");
 
 // Secure SignUp Execution
@@ -65,12 +65,9 @@ async function signIn(req, res, next) {
       });
 
       if (account.loginAttempts >= 5) {
-        return res
-          .status(423)
-          .json({
-            message:
-              "Account locked due to consecutive authentication failures.",
-          });
+        return res.status(423).json({
+          message: "Account locked due to consecutive authentication failures.",
+        });
       }
       return res.status(400).json({ message: "Invalid email or password" });
     }
@@ -94,14 +91,4 @@ async function signIn(req, res, next) {
   }
 }
 
-async function profile(req, res, next) {
-  try {
-    return res
-      .status(200)
-      .json({ account: req.user, message: "Profile fetched successfully" });
-  } catch (error) {
-    next(error);
-  }
-}
-
-module.exports = { signUp, signIn, profile };
+module.exports = { signUp, signIn };
