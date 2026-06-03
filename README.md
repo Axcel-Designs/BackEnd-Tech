@@ -10,9 +10,14 @@ This repository showcases a collection of backend development projects built pri
 * **Database:** MongoDB
 * **Object Data Modeling (ODM):** Mongoose
 
+  ### Other Technology
+
+  * JasonWebToken
+  * ByCrypt
+
 ## Projects
 
-* ### [Project 01](./project_01) - (Object)
+* ### [Project 01](./project_01) - Object
 
 <!-- [Live Demo:]() -->
 

@@ -13,15 +13,20 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3210;
 
 app.use("/api/user", userRouter);
 app.use("/api/moderator", modRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/public", publicRoute);
 
+app.get("/", (req, res) => {
+  return res.status(200).json({ message: "entrypoint" });
+});
+
 app.use(notFound);
 app.use(errorHandler);
+
 
 async function startServer() {
   try {
