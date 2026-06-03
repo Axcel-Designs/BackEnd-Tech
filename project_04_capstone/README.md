@@ -1,6 +1,6 @@
-# Authentication, Authorization & Secure API Design with Node.js
+# Authentication, Authorization & Secure API Design with Node.Stack Requirements
 
-Stack Requirements
+**[API Documentation](https://documenter.getpostman.com/view/46204053/2sBXwpNWfA)**  
 
 Use the following technologies:
 
@@ -223,7 +223,7 @@ Students must answer these theoretically:
 5. Question 5
     Why should logging systems be treated as sensitive infrastructure?
 
-**[Documentation](https://documenter.getpostman.com/view/46204053/2sBXwpNWfA)**  
+**[API Documentation](https://documenter.getpostman.com/view/46204053/2sBXwpNWfA)**  
 
 <!-- 
 vaultpass-backend/

@@ -34,7 +34,9 @@ This repository showcases a collection of backend development projects built pri
 * ### [Project 04 Capstone](./project_04_capstone_assessment) - VaultPass: Secure Authentication & Authorization API
 
     This project redesigns the backend for "VaultPass," a platform for secure private notes and team access. It implements a comprehensive authentication and authorization system with role-based access control (RBAC), account locking for failed login attempts, JWT token security, and a suspicious activity logger.
+**[API Documentation](https://documenter.getpostman.com/view/46204053/2sBXwpNWfA)**  
 <!-- [Live Demo:]() -->
+
 
 * ### [Project 05](./project_05) - (Description coming soon)
 
