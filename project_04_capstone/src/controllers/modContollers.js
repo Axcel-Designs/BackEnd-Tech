@@ -4,7 +4,7 @@ async function getReports(req, res, next) {
   try {
     const reports = await AuditLog.find();
 
-    if(!reports){
+    if (!reports) {
       return res.status(404).json({ message: "No reports found" });
     }
 

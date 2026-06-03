@@ -40,7 +40,7 @@ async function setAdmin(req, res, next) {
   }
 }
 // del users
-async function delUser(req, res, next) {
+async function delAccount(req, res, next) {
   const ipAddress = req.ip || req.socket.remoteAddress;
   try {
     if (req.user._id.toString() === req.params.id) {
@@ -104,4 +104,4 @@ async function getUser(req, res, next) {
   }
 }
 
-module.exports = { setAdmin, delUser, getAllUsers, getUser };
+module.exports = { setAdmin, delAccount, getAllUsers, getUser };
