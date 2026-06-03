@@ -3,10 +3,10 @@ const protect = require("../middleware/authMiddleware");
 const { signUp, signIn } = require("../controllers/authController");
 const { profile } = require("../controllers/userController");
 
-const userRouter = express.Router();
+const authRouter = express.Router();
 
-userRouter.post("/signup", signUp);
-userRouter.post("/signin", signIn);
-userRouter.get("/profile", protect, profile);
+authRouter.post("/signup", signUp);
+authRouter.post("/signin", signIn);
+authRouter.get("/profile", protect, profile);
 
-module.exports = userRouter;
+module.exports = authRouter;

@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const connectDB = require("./src/config/db");
-const userRouter = require("./src/routes/userRoute");
+const authRouter = require("./src/routes/userRoute");
 const modRouter = require("./src/routes/modRoute");
 const adminRouter = require("./src/routes/adminRoute");
 const publicRoute = require("./src/routes/publicRoute");
@@ -15,7 +15,7 @@ app.use(morgan("dev"));
 
 const port = process.env.PORT || 3210;
 
-app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
 app.use("/api/moderator", modRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/public", publicRoute);
@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 
 app.use(notFound);
 app.use(errorHandler);
-
 
 async function startServer() {
   try {
