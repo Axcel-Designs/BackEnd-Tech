@@ -7,8 +7,8 @@ This repository showcases a collection of backend development projects built pri
 * **Programming Language:** JavaScript
 * **Runtime Environment:** Node.js
 * **Web Framework:** Express.js
-* **Database:** MongoDB
-* **Object Data Modeling (ODM):** Mongoose
+* **Database:** MongoDB, PostgreSQL
+* **Object Data Modeling (ODM):** Mongoose, TypeORM
 
   ### Other Technology
 
