@@ -2,12 +2,28 @@
   "name": "project_05_capstone",
   "version": "1.0.0",
   "description": " **AutoLease** capstone project ",
-  "main": "main.js",
+  "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec ts-node main.ts",
+    "start": "ts-node main.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.22.0",
+    "typeorm": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10"
+  }
 }
