@@ -18,7 +18,6 @@ This repository showcases a collection of backend development projects built pri
 ## Projects
 
 * ### [Project 01](./project_01) - Object
-
 <!-- [Live Demo:]() -->
 
 * ### [Project 02](./project_02) - Basic Array Manipulation Exercises
@@ -29,28 +28,13 @@ This repository showcases a collection of backend development projects built pri
 * ### [Project 03](./project_03) - GigFlow Pro Onboarding API
 
     A robust Service Provider Management System for the "GigFlow" platform. This API handles professional profiles, skill categorization, and a verification workflow, featuring CRUD operations, custom verification routes, skill-based search, duplicate prevention, and global error handling.
-<!-- [Live Demo:]() -->
 
-* ### [Project 04 Capstone](./project_04_capstone_assessment) - VaultPass: Secure Authentication & Authorization API
+* ### [Project 04 Capstone](./project_04_capstone) - VaultPass: Secure Authentication & Authorization API
 
     This project redesigns the backend for "VaultPass," a platform for secure private notes and team access. It implements a comprehensive authentication and authorization system with role-based access control (RBAC), account locking for failed login attempts, JWT token security, and a suspicious activity logger.
 **[API Documentation](https://documenter.getpostman.com/view/46204053/2sBXwpNWfA)**  
-<!-- [Live Demo:]() -->
 
+* ### [Project 05 Capstone](./project_05_capstone) - AutoLease
 
-* ### [Project 05](./project_05) - (Description coming soon)
-
-<!-- [Live Demo:]() -->
-
-* ### [Project 06](./project_06) - (Description coming soon)
-
-<!-- [Live Demo:]() -->
-
-* ### [Project 07](./project_07) - (Description coming soon)
-<!-- [Live Demo:]() -->
-
-* ### [Project 08](./project_08) - (Description coming soon)
-<!-- [Live Demo:]() -->
-
-* ### [Project 09](./project_09) - (Description coming soon)
-<!-- [Live Demo:]() -->
+    AutoLease is building a platform that allows car owners to lease their vehicles to earn money, customers to rent vehicles from verified owners, and the company to earn a commission from every successful rental.
+**[API Documentation]()**  

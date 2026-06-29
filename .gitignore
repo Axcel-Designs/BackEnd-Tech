@@ -3,3 +3,8 @@
 node_modules/
 
 project_00/
+
+.vscode/
+/.vscode/
+
+main.js
