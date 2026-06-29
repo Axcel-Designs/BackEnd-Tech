@@ -1,4 +1,4 @@
-# Build a Production-Ready Car Rental & Marketplace API
+# A Production-Ready Car Rental & Marketplace API
 
 `AutoLease` is building a platform that allows:
 * **Car owners** to lease their vehicles to earn money.
